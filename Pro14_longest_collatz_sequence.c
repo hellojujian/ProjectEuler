@@ -32,9 +32,9 @@ int collatz_se_chain_length(unsigned int n,int count){
 		return count;
 	}
 	if(n%2 == 0){
-		return collatz_se_chain_length(n/2,1+count);
+		return collatz_se_chain_length(n>>1,1+count);
 	}
 	if(n%2 != 0){
-		return collatz_se_chain_length(3*n+1,1+count);
+		return collatz_se_chain_length((n<<1)+(n+1),1+count);
 	}
 }
