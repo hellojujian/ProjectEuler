@@ -10,10 +10,12 @@
  */
 
 #include <stdio.h>
+#include <time.h>
 
 int ipow(int base, int p);
 
 int main() {
+    int begin = clock();
     int A[6] = {2, 3, 5, 7, 6, 10};
     int sum = 0;
     int i, j, tmpSum;
@@ -82,7 +84,8 @@ int main() {
     printf("repeat is %d\n", repeat);
 
     printf("sum is %d\n, there is %d distinct terms\n", sum, 99*99-sum-repeat);
-
+    int stop = clock();
+    printf("time consumed is %dms\n", (stop-begin));
 
     return 0;
 }
