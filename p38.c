@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int intLen(int n);
 int checkPandigital(int n);
 
 int main() {
@@ -27,15 +26,6 @@ int main() {
     }
 
     printf("%d%d\n", maxn, maxi*maxn);
-
-    return 0;
-}
-
-int intLen(int n) {
-    char *s;
-    itoa(n, s, 10);
-
-    return strlen(s);
 
     return 0;
 }
