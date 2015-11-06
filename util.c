@@ -8,8 +8,11 @@
 #include "util.h"
 
 long long int ipow(int base, int p) {
-    if (p <= 0) {
+    if (p < 0) {
         return base;
+    }
+    if (p == 0) {
+        return 1;
     }
     long long int i, sum;
     sum = base;
