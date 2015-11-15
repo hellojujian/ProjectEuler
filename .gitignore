@@ -166,3 +166,5 @@ pip-log.txt
 *.exe
 *.s
 *.o
+*.swp
+*.swo

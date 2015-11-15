@@ -5,14 +5,18 @@
  * 分析可得，替换位置必定不包含最低位，若包含，则0-9中有5个偶数，剩下的5个
  * 奇数达不到8个的数目要求
  *
+ * 参考: http://wuchong.me/blog/2014/07/28/permutation-and-combination-realize/
+ *
  * Distributed under terms of the MIT license.
  */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "util.h"
 
 int replaceOneDigit(long long int n, int len);
+int replaceSomeDigit(long long int n);
 
 int main() {
 
@@ -23,7 +27,27 @@ int main() {
         }
     }
 
+    replaceSomeDigit(123);
+
     return 0;
+}
+
+int replaceSomeDigit(long long int n) {
+    int i, j, tmp, len, m;
+    char s[20];
+    ltoa(n, s, 10);
+    len = strlen(s);
+
+    m = 1<<len;
+    for (i=1; i<m; i++) {
+        for (j=0; j<len; j++) {
+            tmp = i;
+            if (tmp & (1<<j)) {
+                printf("%c position:%d   ", s[j], j);
+            }
+        }
+        printf("\n");
+    }
 }
 
 int replaceOneDigit(long long int n, int len) {
