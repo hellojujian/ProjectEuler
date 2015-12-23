@@ -7,6 +7,11 @@
 
 #include <stdio.h>
 
+struct rankEntry {
+    int rank;
+    int val;
+};
+
 int main() {
 
     return 0;
